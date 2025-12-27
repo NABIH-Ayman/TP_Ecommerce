@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Premium Headphones{% endblock %}
+
+{% block content %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid rounded" alt="Product">
+            </div>
+
+            <div class="col-md-6">
+                <h1 class="mb-3">Premium Wireless Headphones</h1>
+                <p class="text-muted fs-4 mb-3">$129.99</p>
+
+                <p class="mb-4">
+                    Experience superior sound quality with our premium wireless headphones.
+                    Features active noise cancellation, 30-hour battery life, and premium comfort padding.
+                </p>
+
+                <ul class="list-unstyled mb-4">
+                    <li><strong>Brand:</strong> AudioTech</li>
+                    <li><strong>Color:</strong> Matte Black</li>
+                    <li><strong>Connectivity:</strong> Bluetooth 5.0</li>
+                    <li><strong>Battery Life:</strong> 30 hours</li>
+                </ul>
+
+                {# DÉBUT DU FORMULAIRE SYMFONY #}
+                {{ form_start(form) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.quantity, 'Quantity', {'label_attr': {'class': 'form-label'}}) }}
+                    {# Le widget génère l'input avec les classes définies dans le AddToCartType #}
+                    {{ form_widget(form.quantity) }}
+                    {{ form_errors(form.quantity) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.color, 'Select Color', {'label_attr': {'class': 'form-label'}}) }}
+                    {# Le widget génère le select #}
+                    {{ form_widget(form.color) }}
+                    {{ form_errors(form.color) }}
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Add to Cart</button>
+
+                {{ form_end(form) }}
+                {# FIN DU FORMULAIRE #}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-# TP Symfony : E-Learning Platform
+# TP Symfony : E-Learning & Product Form
 
 Projet réalisé dans le cadre du TP Symfony (EHEI 2025/2026).
 
@@ -15,7 +15,15 @@ Projet réalisé dans le cadre du TP Symfony (EHEI 2025/2026).
 - **Factory** : Implémentation de `DefaultCourseFactory` pour la création des objets.
 - **Interface** : Utilisation de `SimilarCourseProviderInterface` pour la fonctionnalité "Cours similaires".
 
-### TP 3 & 4 : Les Formulaires
+### TP 3 : Page Produit (Headphones)
+- **Objectif** : Transformer une page HTML statique en page Symfony dynamique.
+- **Réalisation** :
+    - Création du `AddToCartType` (Champs Quantity & Color).
+    - Intégration dans `CartController`.
+    - Templating fidèle au design Bootstrap fourni.
+    - Route accessible via : `/product/headphones`.
+
+### TP 4 : Les Formulaires Avancés
 - **Wishlist** : Ajout d'un bouton formulaire (CSRF protected) sur la page de détail d'un cours.
 - **Newsletter** : Création d'un formulaire global dans le footer géré par un `SubscribeController` dédié (Embedded Controller).
 

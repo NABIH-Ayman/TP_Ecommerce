@@ -26,17 +26,17 @@
                 </li>
                 <li class="nav-item">
                     {# On mettra le lien catalogue plus tard #}
-                    <a class="nav-link" href="#">Catalogue des cours</a>
+                    <a class="nav-link" href="{{ path('app_catalog_all') }}">Catalogue des cours</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
                     <div class="dropdown-menu">
                         {% if app.user is not null %}
-                            <a class="dropdown-item" href="{{ path('app_security') }}">Mon Profil</a>
+                            <a class="dropdown-item" href="#">Mon Profil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Se déconnecter</a>
+                            <a class="dropdown-item" href="{{ path('app_page') }}">Se déconnecter</a>
                         {% else %}
-                            <a class="dropdown-item" href="#">Se connecter</a>
+                            <a class="dropdown-item" href="{{ path('app_security') }}">Se connecter</a>
                         {% endif %}
                     </div>
                 </li>
@@ -72,7 +72,6 @@
                 {# APPEL DU CONTROLEUR #}
                 {{ render(controller('App\\Controller\\SubscribeController::showForm')) }}
 
-                <p class="text-body-secondary small mt-2 mb-0">© 2025 Company, Inc.</p>
             </div>
             {# -------------------------- #}
 
