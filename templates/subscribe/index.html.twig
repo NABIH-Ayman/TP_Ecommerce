@@ -1,0 +1,15 @@
+{# On pointe l'action vers la route qu'on vient de créer #}
+{{ form_start(form, {action: url('app_subscribe') }) }}
+<h6>S'inscrire à la newsletter</h6>
+<div class="d-flex flex-column flex-sm-row gap-2 justify-content-end">
+
+    {# Champ Email #}
+    {{ form_widget(form.email, {
+    attr: {class: 'form-control', placeholder: 'Email address'}
+    }) }}
+
+    <button class="btn btn-primary" type="submit">OK</button>
+</div>
+{# Affichage des erreurs éventuelles #}
+{{ form_errors(form) }}
+{{ form_end(form) }}

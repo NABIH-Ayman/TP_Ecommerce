@@ -65,6 +65,17 @@
                     <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
                 </ul>
             </div>
+
+            {# --- SECTION NEWSLETTER --- #}
+            <div class="col-md-5 ms-auto text-end">
+
+                {# APPEL DU CONTROLEUR #}
+                {{ render(controller('App\\Controller\\SubscribeController::showForm')) }}
+
+                <p class="text-body-secondary small mt-2 mb-0">© 2025 Company, Inc.</p>
+            </div>
+            {# -------------------------- #}
+
             <div class="col-md-5 ms-auto text-end">
                 <p class="text-body-secondary small mt-2 mb-0">© 2025 Company, Inc.</p>
             </div>
