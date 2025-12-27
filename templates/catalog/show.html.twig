@@ -18,6 +18,17 @@
                     <p><strong>Synopsis :</strong> {{ course.synopsis }}</p>
                     <hr>
                     <p>{{ course.description }}</p>
+
+                    {# --- DÉBUT DU FORMULAIRE WISHLIST --- #}
+                    <div class="mt-4">
+                        {{ form_start(form) }}
+                        <button type="submit" class="btn btn-outline-danger">
+                            ❤️ Ajouter à ma liste d'envies
+                        </button>
+                        {{ form_end(form) }}
+                    </div>
+                    {# --- FIN DU FORMULAIRE --- #}
+
                 </div>
             </div>
         </div>

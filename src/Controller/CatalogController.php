@@ -8,6 +8,7 @@ use App\Course\Handler\DefaultCourseHandler;
 use App\DTO\Author;
 use App\DTO\Category;
 use App\DTO\Course;
+use App\Form\Type\AddToWishlistType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -31,8 +32,11 @@ class CatalogController extends AbstractController
             throw $this->createNotFoundException('La page que vous demandez est introuvable.');
         }
 
+        $form = $this->createForm(AddToWishlistType::class);
+
         return $this->render('catalog/show.html.twig', [
             'course' => $course,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -54,7 +58,7 @@ class CatalogController extends AbstractController
     {
         $allCourses = $this->courseHandler->fetchAllCourses();
         $dummyCourse = reset($allCourses); // On prend le premier cours de la liste
-        
+
         $similarCourses = $this->courseHandler->getSimilarCourses($dummyCourse, $limit);
 
         return $this->render('catalog/similar_courses.html.twig', [
