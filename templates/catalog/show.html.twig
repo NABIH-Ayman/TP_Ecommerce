@@ -23,7 +23,7 @@
         </div>
         <div class="col-3">
             <div class="alert alert-info">
-                Liste des cours similaires... (À venir)
+                {{ render(controller('App\\Controller\\CatalogController::similarCourses', {limit: 2})) }}
             </div>
         </div>
     </div>

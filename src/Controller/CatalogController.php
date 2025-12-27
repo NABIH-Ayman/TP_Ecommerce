@@ -49,4 +49,17 @@ class CatalogController extends AbstractController
         // http://localhost/catalog/all
     }
 
+    // Cette méthode sera appelée directement par Twig !
+    public function similarCourses(int $limit = 2): Response
+    {
+        $allCourses = $this->courseHandler->fetchAllCourses();
+        $dummyCourse = reset($allCourses); // On prend le premier cours de la liste
+        
+        $similarCourses = $this->courseHandler->getSimilarCourses($dummyCourse, $limit);
+
+        return $this->render('catalog/similar_courses.html.twig', [
+            'courses' => $similarCourses,
+        ]);
+    }
+
 }

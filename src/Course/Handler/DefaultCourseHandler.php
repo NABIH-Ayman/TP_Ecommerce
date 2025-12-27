@@ -7,7 +7,7 @@ use App\DTO\Author;
 use App\DTO\Category;
 use App\DTO\Course;
 
-class DefaultCourseHandler
+class DefaultCourseHandler implements SimilarCourseProviderInterface
 {
     // Injection de dépendance : on récupère l'usine
     public function __construct(
@@ -65,4 +65,16 @@ class DefaultCourseHandler
         $courses = $this->fetchAllCourses();
         return $courses[$slug] ?? null;
     }
+
+    public function getSimilarCourses(Course $course, int $limit): array
+    {
+        $courses = $this->fetchAllCourses();
+
+        $keys = \array_flip(\array_rand($courses, $limit));
+
+        return \array_intersect_ukey($courses, $keys, function (string $a, $b) {
+            return $a <=> $b;
+        });
+    }
+
 }
