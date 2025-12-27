@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pour que le footer colle bien en bas si la page est courte */
+}
+
+footer {
+    margin-top: auto; /* Le footer descend automatiquement en bas */
+    margin-bottom: 0 !important;
+    padding-bottom: 10px; /* Ajustable */
+}
