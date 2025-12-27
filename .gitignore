@@ -1,0 +1,32 @@
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+
+###> Docker & Infra ###
+docker-compose.override.yml
+
+# Ignore les données de la BDD si elles sont dans le dossier infra
+/infra/mysql/data/
+/infra/postgres/data/
+
+###> IDE & OS ###
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

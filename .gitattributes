@@ -1,0 +1,15 @@
+# Forcer le style de fin de ligne Linux (LF) pour tout le monde
+* text=auto eol=lf
+
+# Fichiers binaires
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+
+# Scripts Shell
+*.sh text eol=lf
